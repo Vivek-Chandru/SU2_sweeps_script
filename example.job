@@ -1,0 +1,125 @@
+#!/bin/bash -l
+
+#SBATCH --partition=standard
+#SBATCH --nodes=4
+#SBATCH --time=168:00:00
+#SBATCH --job-name=HIGH_CLIME
+#SBATCH --ntasks-per-node=20
+#SBATCH --output="high_alpha.out"
+#SBATCH --exclusive
+
+working_dir=~/
+cd $working_dir
+
+module load software/su2/7.10
+
+cd Clime
+cd M0.102
+
+cd alpha_10
+cd beta_0
+mpiexec -np 72 SU2_CFD Alpha_10_beta_0.cfg
+cd ..
+
+cd beta_2
+mpiexec -np 72 SU2_CFD Alpha_10_beta_2.cfg
+cd ..
+
+cd beta_4
+mpiexec -np 72 SU2_CFD Alpha_10_beta_4.cfg
+cd ..
+
+cd beta_6
+mpiexec -np 72 SU2_CFD Alpha_10_beta_6.cfg
+cd ..
+
+cd beta_8
+mpiexec -np 72 SU2_CFD Alpha_10_beta_8.cfg
+cd ..
+
+cd beta_10
+mpiexec -np 72 SU2_CFD Alpha_10_beta_10.cfg
+cd ..
+
+cd ..
+
+cd alpha_11
+cd beta_0
+mpiexec -np 72 SU2_CFD Alpha_11_beta_0.cfg
+cd ..
+
+cd beta_2
+mpiexec -np 72 SU2_CFD Alpha_11_beta_2.cfg
+cd ..
+
+cd beta_4
+mpiexec -np 72 SU2_CFD Alpha_11_beta_4.cfg
+cd ..
+
+cd beta_6
+mpiexec -np 72 SU2_CFD Alpha_11_beta_6.cfg
+cd ..
+
+cd beta_8
+mpiexec -np 72 SU2_CFD Alpha_11_beta_8.cfg
+cd ..
+
+cd beta_10
+mpiexec -np 72 SU2_CFD Alpha_11_beta_10.cfg
+cd ..
+
+cd ..
+
+cd alpha_12
+cd beta_0
+mpiexec -np 72 SU2_CFD Alpha_12_beta_0.cfg
+cd ..
+
+cd beta_2
+mpiexec -np 72 SU2_CFD Alpha_12_beta_2.cfg
+cd ..
+
+cd beta_4
+mpiexec -np 72 SU2_CFD Alpha_12_beta_4.cfg
+cd ..
+
+cd beta_6
+mpiexec -np 72 SU2_CFD Alpha_12_beta_6.cfg
+cd ..
+
+cd beta_8
+mpiexec -np 72 SU2_CFD Alpha_12_beta_8.cfg
+cd ..
+
+cd beta_10
+mpiexec -np 72 SU2_CFD Alpha_12_beta_10.cfg
+cd ..
+
+cd ..
+
+cd alpha_13
+cd beta_0
+mpiexec -np 72 SU2_CFD Alpha_13_beta_0.cfg
+cd ..
+
+cd beta_2
+mpiexec -np 72 SU2_CFD Alpha_13_beta_2.cfg
+cd ..
+
+cd beta_4
+mpiexec -np 72 SU2_CFD Alpha_13_beta_4.cfg
+cd ..
+
+cd beta_6
+mpiexec -np 72 SU2_CFD Alpha_13_beta_6.cfg
+cd ..
+
+cd beta_8
+mpiexec -np 72 SU2_CFD Alpha_13_beta_8.cfg
+cd ..
+
+cd beta_10
+mpiexec -np 72 SU2_CFD Alpha_13_beta_10.cfg
+cd ..
+
+cd ..
